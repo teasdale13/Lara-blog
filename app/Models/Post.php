@@ -28,6 +28,7 @@ class Post extends Model implements IModelData {
                 PostTable::TABLE_NAME.'.'.PostTable::BODY,
                 CategoryTable::TABLE_NAME.'.'.CategoryTable::DESCRIPTION
             )
+            ->orderBy(PostTable::TABLE_NAME.'.'.PostTable::ID, 'desc')
             ->get();
     }
 

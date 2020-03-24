@@ -26,7 +26,7 @@ class PostsRequest extends FormRequest
         return [
             'title' => 'required|max:100|min:10',
             'body' => 'required|min:25',
-            'category_id' => 'required'
+            'category_id' => 'required|int'
         ];
     }
 }

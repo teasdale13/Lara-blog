@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Helpers\ClassHelper\PostPageHelper;
 use App\Http\Requests\PostsRequest;
 use App\Models\DataFactory;
-use App\Models\Post;
 use App\Models\Table\CategoryTable;
 use App\Models\Table\PostTable;
 use Illuminate\Http\Request;
@@ -21,7 +20,7 @@ class PostController extends Controller {
     public function create() {
         $model = (new DataFactory())->getModel(CategoryTable::TABLE_NAME);
         $categories = $model->getAll();
-        return view(PostPageHelper::CREATE, ['categories' => $categories]);
+        return view(PostPageHelper::CREATE, compact('categories'));
     }
 
     public function store(PostsRequest $request) {
@@ -37,6 +36,7 @@ class PostController extends Controller {
     }
 
     public function edit($id) {
+
     }
 
     public function update(Request $request, $id) {
