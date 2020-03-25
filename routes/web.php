@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Helpers\ClassHelper\RouteNameHelper;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,12 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PageController@home')->name('home');
+Route::get('/', 'PageController@home')->name(RouteNameHelper::HOME);
+Route::get('/about', 'PageController@about')->name(RouteNameHelper::ABOUT);
 Route::resource('posts', 'PostController')->names([
-    'index' => 'posts',
-    'show' => 'post',
-    'create' => 'post_create',
-    'store' => 'post_store',
-    'update' => 'post_update',
-    'delete' => 'post_delete'
+    'index' => RouteNameHelper::POST_INDEX,
+    'show' => RouteNameHelper::POST_SHOW,
+    'create' => RouteNameHelper::POST_CREATE,
+    'edit' => RouteNameHelper::POST_EDIT,
+    'store' => RouteNameHelper::POST_STORE,
+    'update' => RouteNameHelper::POST_UPDATE,
+    'destroy' => RouteNameHelper::POST_DESTROY
 ]);

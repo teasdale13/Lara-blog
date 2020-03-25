@@ -1,10 +1,9 @@
-
 @extends('welcome')
 
 @section('content')
     <div>
         <h3>Create</h3>
-        <form method="POST" action="{{ route( 'post_store' ) }}">
+        <form method="POST" action="{{ route( \App\Helpers\ClassHelper\RouteNameHelper::POST_STORE ) }}">
             @csrf
             <label for="{{ \App\Models\Table\PostTable::TITLE }}">Title :</label><br>
             <input type="text" id="{{ \App\Models\Table\PostTable::TITLE }}" name="{{ \App\Models\Table\PostTable::TITLE }}"><br>

@@ -4,6 +4,12 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * Class PostsRequest that validate all the request send by the user to make sure
+ * all the rules are meet.
+ * @author Kevin Teasdale-Dubé
+ * @package App\Http\Requests
+ */
 class PostsRequest extends FormRequest
 {
     /**
@@ -11,8 +17,7 @@ class PostsRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
-    {
+    public function authorize() {
         return true;
     }
 
@@ -21,12 +26,11 @@ class PostsRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
-    {
+    public function rules() {
         return [
-            'title' => 'required|max:100|min:10',
-            'body' => 'required|min:25',
-            'category_id' => 'required|int'
+            'title'         => 'required|max:100|min:10',
+            'body'          => 'required|min:25',
+            'category_id'   => 'required|int'
         ];
     }
 }
