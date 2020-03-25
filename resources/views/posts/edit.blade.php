@@ -25,11 +25,9 @@
                 <label for="{{ \App\Models\Table\PostTable::CATEGORY_ID }}">Catégories: </label>
                 <select id="{{ \App\Models\Table\PostTable::CATEGORY_ID }}" name="{{ \App\Models\Table\PostTable::CATEGORY_ID }}">
                     @foreach($categories as $category)
-                        @if($category->id === $post->category_id)
-                            <option value="{{ $category->id }}" selected>{{ $category->description }}</option>
-                        @else
-                            <option value="{{ $category->id }}">{{ $category->description }}</option>
-                        @endif
+                        <option
+                            value="{{ $category->id }}"
+                            {{$category->id === $post->category_id ? 'selected' : ''}}>{{ $category->description }}</option>
                     @endforeach
                 </select>
             </div>
