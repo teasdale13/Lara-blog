@@ -4,6 +4,7 @@ namespace App\Models\Interfaces;
 
 /**
  * Interface IModelData
+ * @author Kevin Teasdale-Dubé
  * @package App\Models\Interfaces
  */
 interface IModelData {
