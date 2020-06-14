@@ -26,7 +26,6 @@
                 <select id="{{ \App\Models\Table\PostTable::CATEGORY_ID }}" name="{{ \App\Models\Table\PostTable::CATEGORY_ID }}">
                     @foreach($categories as $category)
                         <option
-
                             value="{{ $category->id }}"
                             {{$category->id === $post->category_id ? 'selected' : ''}}>{{ $category->description }}</option>
                     @endforeach
